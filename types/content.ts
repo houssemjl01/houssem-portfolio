@@ -17,7 +17,14 @@ export type TechIconKey =
   | "git"
   | "github"
   | "maven"
-  | "vscode";
+  | "vscode"
+  | "mysql"
+  | "c"
+  | "chart"
+  | "hedera"
+  | "uml"
+  | "intellij"
+  | "mail";
 
 export type Tech = {
   name: string;
@@ -49,6 +56,21 @@ export type EducationEntry = {
   period: string;
   summary: string;
   focus: string[];
+};
+
+export type OtherWorkEntry = {
+  title: string;
+  kind: string;
+  description: string;
+  stack: string[];
+  highlights: string[];
+};
+
+export type CertificationEntry = {
+  short: string;
+  name: string;
+  issuer: string;
+  date: string | null;
 };
 
 export type FeatureIconKey =

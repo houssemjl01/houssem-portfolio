@@ -99,6 +99,7 @@ const personSchema = {
   familyName: "Jlassi",
   url: site.url,
   email: `mailto:${site.email}`,
+  telephone: site.phone,
   jobTitle: "Full-Stack Developer",
   description: profile.intro,
   address: {
@@ -118,6 +119,11 @@ const personSchema = {
     "TypeScript",
     "PostgreSQL",
     "REST APIs",
+    "JWT authentication",
+    "MySQL",
+    "PHP",
+    "Pandas",
+    "Hedera Hashgraph",
   ],
   sameAs: [site.socials.github, ...(site.socials.linkedin ? [site.socials.linkedin] : [])],
 };

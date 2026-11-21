@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  BarChart3,
   Boxes,
   Coffee,
   Code2,
@@ -12,6 +13,8 @@ import {
   GitBranch,
   KeyRound,
   Leaf,
+  Mail,
+  Network,
   Palette,
   Shield,
   ShieldCheck,
@@ -43,6 +46,13 @@ const techIcons: Record<TechIconKey, LucideIcon> = {
   github: Code2,
   maven: Boxes,
   vscode: Code2,
+  mysql: Database,
+  c: Code2,
+  chart: BarChart3,
+  hedera: Network,
+  uml: Boxes,
+  intellij: Code2,
+  mail: Mail,
 };
 
 export function TechIcon({

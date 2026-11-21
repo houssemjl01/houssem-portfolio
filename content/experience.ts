@@ -8,7 +8,7 @@ export const experience: ExperienceEntry[] = [
     period: "July 2026",
     type: "Internship",
     summary:
-      "Built an email templates management platform end to end — Angular 20 on the frontend, Spring Boot on the backend, and PostgreSQL for persistence.",
+      "Built an email templates management platform end to end — Angular 20 for authoring and preview, Spring Boot for the secured API and delivery, and PostgreSQL for templates, categories, and send history.",
     responsibilities: [
       "Built the Angular 20 interface for creating, editing, categorizing, and searching email templates.",
       "Developed REST endpoints with Spring Boot and persisted templates and send history in PostgreSQL.",

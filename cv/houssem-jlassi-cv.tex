@@ -1,0 +1,190 @@
+% !TeX program = xelatex
+% Compile with XeLaTeX (Overleaf: Settings > Compiler > XeLaTeX).
+% This source is intentionally self-contained and uses only facts supplied by Houssem.
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{fontspec}
+\IfFontExistsTF{Arial}{%
+  \setmainfont{Arial}[
+    BoldFont = Arial Bold,
+    ItalicFont = Arial Italic,
+    BoldItalicFont = Arial Bold Italic
+  ]%
+}{%
+  \setmainfont{Liberation Sans}[
+    BoldFont = Liberation Sans Bold,
+    ItalicFont = Liberation Sans Italic,
+    BoldItalicFont = Liberation Sans Bold Italic
+  ]%
+}
+
+\usepackage[margin=1.55cm,top=1.45cm,bottom=1.45cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{microtype}
+
+\definecolor{ink}{HTML}{111315}
+\definecolor{muted}{HTML}{5F6673}
+\definecolor{accent}{HTML}{2F5FE0}
+\definecolor{hairline}{HTML}{D8DEE9}
+\definecolor{soft}{HTML}{F3F6FF}
+
+\color{ink}
+\pagestyle{empty}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\RaggedRight
+
+\hypersetup{
+  colorlinks = true,
+  urlcolor = accent,
+  linkcolor = ink,
+  pdftitle = {Houssem Eddin Jlassi — CV},
+  pdfauthor = {Houssem Eddin Jlassi},
+  pdfsubject = {Software Engineering Student and Full-Stack Developer},
+  pdfkeywords = {Java, Spring Boot, Angular, PostgreSQL, PFE, Tunisia}
+}
+
+\titleformat{\section}
+  {\normalsize\bfseries\color{accent}}
+  {}
+  {0pt}
+  {\MakeUppercase}
+  [{\vspace{-0.75ex}\rule{\linewidth}{0.6pt}}]
+
+\titlespacing*{\section}{0pt}{9pt}{6pt}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{
+  leftmargin = 1.1em,
+  label = \textcolor{accent}{\tiny$\bullet$},
+  itemsep = 1.5pt,
+  topsep = 0pt,
+  parsep = 0pt
+}
+
+\newcommand{\entry}[3]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & \textcolor{muted}{\textit{#2}}\\
+    \textcolor{muted}{\textit{#3}} &
+  \end{tabularx}
+  \vspace{1pt}
+}
+
+\newcommand{\skillrow}[2]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}>{\bfseries\raggedright}p{3.25cm}X@{}}
+    #1 & #2\\
+  \end{tabularx}
+  \vspace{1pt}
+}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{21}{23}\selectfont\bfseries HOUSSEM EDDIN JLASSI}\\[3pt]
+  {\small\color{muted}
+    SOFTWARE ENGINEERING STUDENT $\cdot$ FULL-STACK DEVELOPER}\\[5pt]
+  {\small
+    \href{mailto:houssemjlassi187@gmail.com}{houssemjlassi187@gmail.com}
+    $\cdot$ \href{https://www.linkedin.com/in/houssem-eddin-jlassi-824a8742b}{LinkedIn}
+    $\cdot$ \href{https://github.com/houssemjl01}{GitHub}
+    $\cdot$ \href{https://houssem-portfolio-gray.vercel.app}{Portfolio}}\\[2pt]
+  {\small\color{muted}
+    Tunis, Tunisia $\cdot$ +216 93 536 505}
+\end{center}
+
+\vspace{-3pt}
+\rule{\linewidth}{1pt}
+
+\section*{Profile Summary}
+Third-year \textbf{Software Engineering} student specializing in Software Engineering and Information Systems at ISLAIb Béja. Hands-on full-stack experience from a \textbf{PFA internship at Vermeg}, where I built an email template management platform with \textbf{Angular, Spring Boot, PostgreSQL, and JWT authentication}. Strong interest in backend and full-stack development, with additional exposure to blockchain through three Hedera certifications. Seeking a \textbf{PFE internship} starting February 2027 in Tunis or remote.
+
+\section*{Professional Experience}
+
+\entry{Vermeg for Banking \& Insurance Software}
+      {Tunis, Tunisia $\cdot$ On-site}
+      {Full-Stack Developer Intern --- PFA Internship \hfill Jul 2026}
+
+\begin{cvitems}
+  \item \textbf{Built end to end} an email template management platform during a PFA internship at \textbf{Vermeg}, an international banking and insurance software company.
+  \item Developed the \textbf{Angular} interface for template CRUD, categorization, search, live preview, SMTP sending, and send-history tracking.
+  \item Implemented the \textbf{Spring Boot} API with \textbf{JWT authentication}, REST endpoints, and \textbf{PostgreSQL} persistence using JPA.
+  \item Integrated \textbf{Spring Mail} with \textbf{MailHog} to test SMTP delivery locally, and debugged a race condition in the sending workflow.
+  \item Identified and remediated a cross-site scripting (XSS) risk in the template rendering flow.
+\end{cvitems}
+
+\section*{Education}
+
+\entry{Institut Supérieur des Langues Appliquées et d'Informatique de Béja (ISLAIb)}
+      {Béja, Tunisia}
+      {Bachelor's Degree in Computer Science --- Software Engineering (Génie Logiciel et Systèmes d'Information) \hfill 2024--2027 (Expected)}
+
+\begin{cvitems}
+  \item Third-year student with coursework in software engineering, information systems, databases, and web/mobile development.
+\end{cvitems}
+
+\section*{Technical Skills}
+
+\skillrow{Programming}{Java, JavaScript/TypeScript, PHP, Python, C, SQL}
+\skillrow{Frontend}{\textbf{Angular}, HTML5, CSS3, JavaScript}
+\skillrow{Backend}{\textbf{Spring Boot}, REST APIs, JPA/Hibernate, JWT}
+\skillrow{Databases}{\textbf{PostgreSQL}, MySQL}
+\skillrow{Data Analysis}{Pandas, NumPy, Matplotlib, Seaborn}
+\skillrow{Tools \& Methods}{Git, SMTP/MailHog, UML, Agile/Scrum, IntelliJ IDEA, VS Code}
+\skillrow{Blockchain}{Hedera Hashgraph --- Hedera Certified Developer Associate}
+
+\section*{Academic Projects}
+
+\entry{Restaurant Management System --- CRUD Web Application}
+      {PHP, MySQL, HTML, CSS, JavaScript}
+      {Academic project}
+
+\begin{cvitems}
+  \item \textbf{Designed and built} a restaurant management web application using an \textbf{MVC architecture} in PHP.
+  \item Implemented \textbf{CRUD} operations for menus, orders, customers, and tables, backed by a relational \textbf{MySQL} schema.
+  \item Secured SQL queries and session handling; built a responsive HTML5/CSS3 interface with JavaScript interactions.
+\end{cvitems}
+
+\vspace{3pt}
+
+\entry{Bank Fraud Detection --- Data Analysis}
+      {Python, Pandas, NumPy, Matplotlib, Seaborn}
+      {Academic project}
+
+\begin{cvitems}
+  \item \textbf{Analyzed} a real-world banking transactions dataset (Kaggle) to explore and identify fraud patterns.
+  \item Cleaned and preprocessed data with \textbf{Pandas} (missing values, normalization, encoding) and computed statistical indicators with \textbf{NumPy}.
+  \item Visualized fraud patterns with \textbf{Matplotlib} and \textbf{Seaborn}, and identified discriminative features for anomaly detection.
+\end{cvitems}
+
+\section*{Certifications}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XXX@{}}
+  \textbf{HCDA} & \textbf{HBF} & \textbf{HCF}\\
+  Hedera Certified Developer Associate &
+  Hedera Business Foundation &
+  Hedera Certified Foundation\\
+  \textcolor{muted}{The Hashgraph Association $\cdot$ Aug 2026} &
+  \textcolor{muted}{The Hashgraph Association $\cdot$ Aug 2026} &
+  \textcolor{muted}{The Hashgraph Association}
+\end{tabularx}
+
+\section*{Languages}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}p{4cm}p{4cm}p{4cm}@{}}
+  \textbf{Arabic} --- Native &
+  \textbf{French} --- Intermediate &
+  \textbf{English} --- Intermediate
+\end{tabularx}
+
+\end{document}

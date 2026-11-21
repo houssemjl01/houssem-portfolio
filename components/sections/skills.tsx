@@ -10,7 +10,7 @@ export function Skills() {
       <Container>
         <Reveal>
           <SectionHeading
-            index="03"
+            index="04"
             eyebrow="Skills"
             title="A focused stack, used end to end."
             description="The tools I reach for when building and securing full-stack applications."

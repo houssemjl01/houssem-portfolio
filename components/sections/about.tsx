@@ -25,7 +25,7 @@ export function About() {
       <Container>
         <Reveal>
           <SectionHeading
-            index="02"
+            index="03"
             eyebrow="About"
             title="Engineering with intent."
             description="The academic foundation, the internship, and the questions that keep me interested."

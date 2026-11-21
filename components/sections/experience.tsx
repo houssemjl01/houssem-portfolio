@@ -9,7 +9,7 @@ export function Experience() {
       <Container>
         <Reveal>
           <SectionHeading
-            index="04"
+            index="05"
             eyebrow="Experience"
             title="Where I've built."
             description="One internship, one complete product, and a lot of lessons about shipping software that has to hold up."

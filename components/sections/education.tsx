@@ -13,7 +13,7 @@ export function Education() {
       <Container>
         <Reveal>
           <SectionHeading
-            index="05"
+            index="06"
             eyebrow="Education"
             title="Foundations."
             description="The academic side of the same goal: understanding how software systems are designed, built, and maintained."

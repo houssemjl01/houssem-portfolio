@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Clock, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/contact/contact-form";
 import { CopyEmail } from "@/components/contact/copy-email";
@@ -15,7 +15,7 @@ export function Contact() {
       <Container>
         <Reveal>
           <SectionHeading
-            index="06"
+            index="07"
             eyebrow="Contact"
             title="Let's build something that holds up."
             description="I'm looking for a PFE starting in February 2027. If you're working on something where correctness and security matter, I'd like to hear about it."
@@ -63,6 +63,35 @@ export function Contact() {
                     <CopyEmail email={site.email} />
                   </div>
                 </div>
+              </Reveal>
+
+              <Reveal delay={0.095}>
+                <a
+                  href={`tel:${site.phone.replace(/\s/g, "")}`}
+                  className="group flex items-center justify-between glass glass-interactive rounded-xl p-4"
+                >
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="glass-soft flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-accent">
+                      <Phone
+                        className="h-4 w-4"
+                        strokeWidth={1.7}
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-muted">
+                        Phone
+                      </p>
+                      <p className="mt-0.5 truncate text-sm text-foreground/90">
+                        {site.phone}
+                      </p>
+                    </div>
+                  </div>
+                  <ArrowUpRight
+                    className="h-4 w-4 text-muted transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
+                </a>
               </Reveal>
 
               <Reveal delay={0.11}>
