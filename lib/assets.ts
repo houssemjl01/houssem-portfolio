@@ -35,6 +35,7 @@ export function getProjectScreenshots(slug: string): ProjectScreenshot[] {
       .map((file) => {
         const label = file
           .replace(IMAGE_PATTERN, "")
+          .replace(/^\d+[-_\s]*/, "")
           .replace(/[-_]+/g, " ")
           .trim();
 

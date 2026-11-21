@@ -129,7 +129,12 @@ export function CaseStudy({
 
             <div className="mt-8">
               {screenshots[0] ? (
-                <ScreenshotGallery screenshots={screenshots.slice(0, 1)} />
+                <>
+                  <ScreenshotGallery screenshots={screenshots.slice(0, 1)} />
+                  <p className="mt-3 text-right font-mono text-[9px] uppercase tracking-[0.16em] text-muted">
+                    Featured screenshot · no client data shown
+                  </p>
+                </>
               ) : (
                 <InterfaceSchematic />
               )}
@@ -329,6 +334,9 @@ export function CaseStudy({
             </div>
             <div className="mt-8">
               <ScreenshotGallery screenshots={screenshots} />
+              <p className="mt-3 text-right font-mono text-[9px] uppercase tracking-[0.16em] text-muted">
+                Platform screenshots · no client data shown
+              </p>
             </div>
           </section>
         )}
