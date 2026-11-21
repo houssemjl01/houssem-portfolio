@@ -331,6 +331,10 @@ export function CaseStudy({
               >
                 The platform in use.
               </h2>
+              <p className="mt-3 text-sm leading-relaxed text-secondary">
+                All {screenshots.length} screens, from login to send history.
+                Select any image to enlarge it.
+              </p>
             </div>
             <div className="mt-8">
               <ScreenshotGallery screenshots={screenshots} />

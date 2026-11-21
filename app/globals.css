@@ -558,7 +558,8 @@
 
   .ambient-orb,
   .tilt,
-  .button-sheen {
+  .button-sheen,
+  .screenshot-image {
     animation: none !important;
     transform: none !important;
   }

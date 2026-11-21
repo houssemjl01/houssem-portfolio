@@ -82,6 +82,7 @@ export type ProjectDecision = {
 export type ProjectScreenshot = {
   src: string;
   alt: string;
+  label?: string;
 };
 
 export type Project = {
