@@ -1,6 +1,9 @@
-"""Build the downloadable CV PDF from the same content as cv/houssem-jlassi-cv.tex.
+"""Build a reference PDF from the same content as cv/houssem-jlassi-cv.tex.
 
-Requires: reportlab (already available in this environment).
+The portfolio now serves Houssem's manually designed CV PDF instead, so this
+script writes outside `public/` to avoid replacing the real download.
+
+Requires: reportlab.
 Run from the repository root: python scripts/build_cv_pdf.py
 """
 
@@ -26,7 +29,7 @@ from reportlab.platypus import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "public" / "cv" / "houssem-jlassi-cv.pdf"
+OUTPUT = ROOT / "cv" / "houssem-jlassi-cv-generated.pdf"
 
 INK = "#111315"
 MUTED = "#5F6673"
