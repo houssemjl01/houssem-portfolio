@@ -7,7 +7,7 @@ export const site = {
   shortTitle: "Full-Stack Developer",
   description:
     "Houssem Eddin Jlassi is a software engineering student and full-stack developer in Tunis, Tunisia, building secure applications with Spring Boot, Angular, and PostgreSQL.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://houssem-portfolio.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://houssem-portfolio-gray.vercel.app",
   locale: "en_US",
   location: "Tunis, Tunisia",
   timezone: "Africa/Tunis",
