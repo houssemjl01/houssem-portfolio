@@ -82,7 +82,7 @@ export function CaseStudy({
             {project.tagline}
           </p>
 
-          <dl className="mt-10 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="glass mt-10 grid gap-px overflow-hidden rounded-xl sm:grid-cols-2 lg:grid-cols-4">
             {[
               { label: "Role", value: project.role },
               { label: "Company", value: project.company },
@@ -120,7 +120,7 @@ export function CaseStudy({
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-line bg-surface/50 px-3 py-1.5 font-mono text-[10px] text-secondary"
+                  className="glass-soft rounded-full px-3 py-1.5 font-mono text-[10px] text-secondary"
                 >
                   {tech}
                 </span>
@@ -159,7 +159,7 @@ export function CaseStudy({
           </div>
 
           <div className="lg:col-span-8">
-            <ol className="relative rounded-2xl border border-line bg-surface/40 p-4 md:p-6">
+            <ol className="glass relative rounded-2xl p-4 md:p-6">
               {project.architecture.map((node, index) => {
                 const Icon = architectureIcons[node.icon];
 
@@ -229,7 +229,7 @@ export function CaseStudy({
               return (
                 <div
                   key={feature.title}
-                  className="rounded-xl border border-line bg-surface/40 p-5 transition-colors duration-500 hover:border-line-strong"
+                  className="glass glass-interactive rounded-xl p-5"
                 >
                   <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-background/40 text-accent">
                     <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden="true" />
@@ -300,7 +300,7 @@ export function CaseStudy({
             {project.decisions.map((decision, index) => (
               <div
                 key={decision.title}
-                className="rounded-xl border border-line bg-surface/40 p-6"
+                className="glass glass-interactive rounded-xl p-6"
               >
                 <span className="font-mono text-[10px] tracking-[0.18em] text-accent">
                   {String(index + 1).padStart(2, "0")}
@@ -359,7 +359,7 @@ export function CaseStudy({
           </ul>
         </section>
 
-        <aside className="rounded-2xl border border-line bg-surface/40 p-6 text-[13px] leading-relaxed text-muted md:p-8">
+        <aside className="glass rounded-2xl p-6 text-[13px] leading-relaxed text-muted md:p-8">
           <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-secondary">
             A note on confidentiality
           </p>

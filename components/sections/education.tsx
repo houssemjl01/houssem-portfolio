@@ -22,10 +22,10 @@ export function Education() {
 
         <div className="mt-12 grid gap-4 md:grid-cols-12">
           <Reveal className="md:col-span-7">
-            <div className="h-full rounded-2xl border border-line bg-surface/40 p-6 md:p-8">
+            <div className="glass glass-interactive h-full rounded-2xl p-6 md:p-8">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-background/40 text-accent">
+                  <span className="glass-soft flex h-10 w-10 items-center justify-center rounded-xl text-accent">
                     <GraduationCap
                       className="h-4 w-4"
                       strokeWidth={1.7}
@@ -54,7 +54,7 @@ export function Education() {
           </Reveal>
 
           <Reveal delay={0.05} className="md:col-span-5">
-            <div className="h-full rounded-2xl border border-line bg-surface/40 p-6 md:p-8">
+            <div className="glass glass-interactive h-full rounded-2xl p-6 md:p-8">
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
                 Focus areas
               </p>

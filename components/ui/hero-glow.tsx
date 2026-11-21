@@ -44,7 +44,7 @@ export function HeroGlow() {
       className="pointer-events-none absolute inset-0 -z-10 opacity-80"
       style={{
         background:
-          "radial-gradient(650px circle at var(--mx, 50%) var(--my, 30%), var(--accent-soft), transparent 65%)",
+          "radial-gradient(520px circle at var(--mx, 50%) var(--my, 30%), var(--accent-soft), transparent 66%), radial-gradient(900px ellipse at 82% 8%, var(--orb-two), transparent 72%)",
       }}
     />
   );

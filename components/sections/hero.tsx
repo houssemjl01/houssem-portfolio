@@ -11,6 +11,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { HeroGlow } from "@/components/ui/hero-glow";
 import { Reveal } from "@/components/ui/reveal";
+import { Tilt } from "@/components/ui/tilt";
 import { profile } from "@/content/profile";
 import { site } from "@/content/site";
 import { isCvAvailable } from "@/lib/assets";
@@ -55,7 +56,7 @@ export function Hero() {
             <Reveal delay={0.1}>
               <h1 className="text-display mt-5 text-[clamp(3.1rem,8.2vw,6.4rem)]">
                 <span className="block">Houssem Eddin</span>
-                <span className="mt-1 block font-display font-normal italic tracking-[-0.02em] text-foreground/90">
+                <span className="accent-text mt-1 block font-display font-normal italic tracking-[-0.02em]">
                   Jlassi
                 </span>
               </h1>
@@ -114,13 +115,16 @@ export function Hero() {
 
           <div className="lg:col-span-5">
             <Reveal delay={0.18} y={24}>
-              <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+              <Tilt
+                className="relative mx-auto w-full max-w-md lg:max-w-none"
+                max={7}
+              >
                 <div
                   aria-hidden="true"
-                  className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-accent/5 blur-3xl"
+                  className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-accent/10 blur-3xl"
                 />
 
-                <div className="overflow-hidden rounded-2xl border border-line bg-surface/70 shadow-2xl shadow-black/20 backdrop-blur-sm">
+                <div className="glass glass-interactive overflow-hidden rounded-2xl">
                   <div className="flex items-center gap-2 border-b border-line px-4 py-3">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -204,7 +208,7 @@ export function Hero() {
                       {coreStack.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-full border border-line bg-background/40 px-2.5 py-1 font-mono text-[10px] text-secondary"
+                          className="glass-soft rounded-full px-2.5 py-1 font-mono text-[10px] text-secondary"
                         >
                           {tech}
                         </span>
@@ -212,12 +216,12 @@ export function Hero() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Tilt>
             </Reveal>
           </div>
         </div>
 
-        <div className="mt-16 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted md:mt-24">
+        <div className="scroll-hint mt-16 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted md:mt-24">
           <span className="h-px w-10 bg-line-strong" aria-hidden="true" />
           Scroll to explore
         </div>

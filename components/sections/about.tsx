@@ -51,7 +51,7 @@ export function About() {
 
           <div className="lg:col-span-5">
             <Reveal delay={0.12}>
-              <div className="rounded-2xl border border-line bg-surface/40 p-6">
+              <div className="glass rounded-2xl p-6">
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
                   At a glance
                 </p>
@@ -62,7 +62,7 @@ export function About() {
 
                     return (
                       <li key={fact.label} className="flex gap-3">
-                        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-line bg-background/40 text-accent">
+                        <span className="glass-soft mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-accent">
                           <Icon
                             className="h-3.5 w-3.5"
                             strokeWidth={1.7}

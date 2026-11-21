@@ -20,7 +20,7 @@ export function Skills() {
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {skillGroups.map((group, index) => (
             <Reveal key={group.id} delay={index * 0.05}>
-              <div className="h-full rounded-2xl border border-line bg-surface/40 p-6 transition-colors duration-500 hover:border-line-strong md:p-7">
+              <div className="glass glass-interactive h-full rounded-2xl p-6 md:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h3 className="text-base font-medium tracking-[-0.01em]">
@@ -38,7 +38,7 @@ export function Skills() {
                 <ul className="mt-6 flex flex-wrap gap-2">
                   {group.items.map((tech) => (
                     <li key={tech.name}>
-                      <span className="inline-flex items-center gap-2 rounded-full border border-line bg-background/40 px-3 py-1.5 text-xs text-secondary transition-colors duration-300 hover:border-accent/30 hover:text-foreground">
+                      <span className="glass-soft inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs text-secondary transition-colors duration-300 hover:border-accent/30 hover:text-foreground">
                         <TechIcon
                           name={tech.icon}
                           className="h-3.5 w-3.5 text-accent/80"

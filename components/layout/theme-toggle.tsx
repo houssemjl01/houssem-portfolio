@@ -31,7 +31,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label="Toggle color theme"
       title="Toggle color theme"
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center rounded-full border border-line bg-surface/50 text-secondary transition-colors duration-300 hover:border-line-strong hover:text-foreground",
+        "glass-soft inline-flex h-9 w-9 items-center justify-center rounded-full text-secondary transition-colors duration-300 hover:border-accent/40 hover:text-accent",
         className,
       )}
     >

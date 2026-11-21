@@ -10,7 +10,7 @@ import { cn } from "@/lib/cn";
 type FieldErrors = Partial<Record<"name" | "email" | "message", string>>;
 
 const inputClasses =
-  "w-full rounded-lg border border-line bg-background/50 px-3 text-sm text-foreground placeholder:text-muted/70 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/15";
+  "glass-soft w-full rounded-lg px-3 text-sm text-foreground placeholder:text-muted/80 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/15";
 
 const labelClasses =
   "text-[11px] font-medium uppercase tracking-[0.14em] text-muted";
@@ -76,7 +76,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-2xl border border-line bg-surface/40 p-6 md:p-8"
+      className="glass rounded-2xl p-6 md:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
@@ -183,7 +183,7 @@ export function ContactForm() {
       {status === "draft" && (
         <div
           role="status"
-          className="mt-5 flex gap-3 rounded-xl border border-success/25 bg-success/10 p-4"
+          className="glass-soft mt-5 flex gap-3 rounded-xl border border-success/25 p-4"
         >
           <CircleCheck
             className="mt-0.5 h-4 w-4 shrink-0 text-success"

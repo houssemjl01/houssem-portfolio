@@ -20,7 +20,7 @@ export async function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link href="/" className="inline-flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line-strong bg-surface/60 font-mono text-xs font-medium tracking-[-0.02em]">
+              <span className="glass-soft flex h-9 w-9 items-center justify-center rounded-lg font-mono text-xs font-medium tracking-[-0.02em]">
                 {site.monogram}
               </span>
               <span className="text-sm font-medium tracking-[-0.01em]">

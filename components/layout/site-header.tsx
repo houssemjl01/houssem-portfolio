@@ -67,15 +67,15 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
         scrolled || open
-          ? "border-b border-line bg-background/85 backdrop-blur-xl"
+          ? "glass-header"
           : "border-b border-transparent bg-transparent",
       )}
     >
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Link href="/" className="group flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line-strong bg-surface/60 font-mono text-xs font-medium tracking-[-0.02em] text-foreground transition-colors duration-300 group-hover:border-accent/40 group-hover:text-accent">
+          <span className="glass-soft flex h-9 w-9 items-center justify-center rounded-lg font-mono text-xs font-medium tracking-[-0.02em] text-foreground transition-colors duration-300 group-hover:border-accent/40 group-hover:text-accent">
             {site.monogram}
           </span>
           <span className="hidden flex-col leading-tight sm:flex">
@@ -94,7 +94,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-[13px] text-secondary transition-colors duration-300 hover:text-foreground"
+              className="rounded-full px-3 py-2 text-[13px] text-secondary transition-colors duration-300 hover:bg-surface/50 hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -142,7 +142,7 @@ export function SiteHeader() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="border-t border-line bg-background/95 backdrop-blur-xl lg:hidden"
+            className="glass-header border-t lg:hidden"
           >
             <div className="container-page flex max-h-[calc(100dvh-4rem)] flex-col overflow-y-auto py-6">
               <nav aria-label="Mobile" className="flex flex-col">

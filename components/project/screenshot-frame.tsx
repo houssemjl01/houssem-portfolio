@@ -15,7 +15,7 @@ export function ScreenshotFrame({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-xl border border-line bg-surface shadow-2xl shadow-black/20",
+        "glass overflow-hidden rounded-xl",
         className,
       )}
     >

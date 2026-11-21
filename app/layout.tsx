@@ -8,6 +8,7 @@ import {
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeScript } from "@/components/layout/theme-script";
+import { AmbientBackdrop } from "@/components/ui/ambient-backdrop";
 import { profile } from "@/content/profile";
 import { site } from "@/content/site";
 
@@ -150,7 +151,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body className="grain flex min-h-dvh flex-col antialiased">
+      <body className="grain relative flex min-h-dvh flex-col antialiased">
+        <AmbientBackdrop />
+
         <a
           href="#main"
           className="sr-only rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100]"
@@ -159,8 +162,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
 
         <SiteHeader />
-        {children}
-        <SiteFooter />
+
+        <div className="relative z-10 flex flex-1 flex-col">
+          {children}
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );

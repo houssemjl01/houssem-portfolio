@@ -7,13 +7,13 @@ type ButtonVariant = "primary" | "secondary" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
 
 const base =
-  "group inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 ease-out-expo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50";
+  "group button-sheen inline-flex items-center justify-center gap-2 rounded-full font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-accent text-accent-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_10px_30px_-12px_var(--accent)] hover:bg-accent/90",
+    "bg-accent text-accent-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_14px_36px_-14px_var(--accent)] hover:bg-accent/90 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.28),0_20px_46px_-16px_var(--accent)]",
   secondary:
-    "border border-line-strong bg-surface/50 text-foreground hover:border-accent/40 hover:bg-elevated",
+    "glass-soft border border-line-strong text-foreground hover:border-accent/45 hover:text-accent",
   ghost: "text-secondary hover:text-foreground",
 };
 

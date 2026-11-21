@@ -38,10 +38,10 @@ export function Contact() {
 
             <div className="mt-8 space-y-3">
               <Reveal delay={0.08}>
-                <div className="rounded-xl border border-line bg-surface/40 p-4">
+                <div className="glass glass-interactive rounded-xl p-4">
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex min-w-0 items-center gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-background/40 text-accent">
+                      <span className="glass-soft flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-accent">
                         <Mail
                           className="h-4 w-4"
                           strokeWidth={1.7}
@@ -70,10 +70,10 @@ export function Contact() {
                   href={site.socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between rounded-xl border border-line bg-surface/40 p-4 transition-colors duration-300 hover:border-line-strong"
+                  className="group flex items-center justify-between glass glass-interactive rounded-xl p-4"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-background/40 text-accent">
+                    <span className="glass-soft flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-accent">
                       <GithubIcon className="h-4 w-4" />
                     </span>
                     <div>
@@ -98,10 +98,10 @@ export function Contact() {
                     href={site.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between rounded-xl border border-line bg-surface/40 p-4 transition-colors duration-300 hover:border-line-strong"
+                    className="group flex items-center justify-between glass glass-interactive rounded-xl p-4"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-background/40 text-accent">
+                      <span className="glass-soft flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-accent">
                         <LinkedinIcon className="h-4 w-4" />
                       </span>
                       <div>
@@ -122,8 +122,8 @@ export function Contact() {
               )}
 
               <Reveal delay={0.17}>
-                <div className="flex items-center gap-3 rounded-xl border border-line bg-surface/40 p-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-background/40 text-accent">
+                <div className="flex items-center gap-3 glass glass-interactive rounded-xl p-4">
+                  <span className="glass-soft flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-accent">
                     <Clock
                       className="h-4 w-4"
                       strokeWidth={1.7}

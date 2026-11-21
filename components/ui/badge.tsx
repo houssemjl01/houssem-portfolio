@@ -16,10 +16,10 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em]",
+        "glass-soft inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em]",
         tone === "accent"
-          ? "border-accent/30 bg-accent-soft text-accent"
-          : "border-line bg-surface/60 text-secondary",
+          ? "border-accent/30 text-accent"
+          : "border-line text-secondary",
         className,
       )}
     >
