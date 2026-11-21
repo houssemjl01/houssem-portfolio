@@ -93,60 +93,60 @@ styles = {
     "section": ParagraphStyle(
         "section",
         fontName=BOLD,
-        fontSize=9.2,
-        leading=11,
+        fontSize=9,
+        leading=10.6,
         textColor=colors.HexColor(ACCENT),
-        spaceAfter=3,
+        spaceAfter=2.5,
     ),
     "entry_title": ParagraphStyle(
         "entry_title",
         fontName=BOLD,
-        fontSize=9.4,
-        leading=11.5,
+        fontSize=9.2,
+        leading=11,
         textColor=colors.HexColor(INK),
     ),
     "entry_meta": ParagraphStyle(
         "entry_meta",
         fontName=ITALIC,
-        fontSize=8.2,
-        leading=11,
+        fontSize=8,
+        leading=10.4,
         alignment=TA_RIGHT,
         textColor=colors.HexColor(MUTED),
     ),
     "entry_sub": ParagraphStyle(
         "entry_sub",
         fontName=ITALIC,
-        fontSize=8.4,
-        leading=11,
+        fontSize=8.1,
+        leading=10.5,
         textColor=colors.HexColor(MUTED),
     ),
     "body": ParagraphStyle(
         "body",
         fontName=REGULAR,
-        fontSize=8.7,
-        leading=11.8,
+        fontSize=8.4,
+        leading=11.2,
         alignment=TA_LEFT,
         textColor=colors.HexColor(INK),
     ),
     "bullet": ParagraphStyle(
         "bullet",
         fontName=REGULAR,
-        fontSize=8.5,
-        leading=11.2,
+        fontSize=8.2,
+        leading=10.6,
         textColor=colors.HexColor(INK),
     ),
     "skill_label": ParagraphStyle(
         "skill_label",
         fontName=BOLD,
-        fontSize=8.5,
-        leading=11.2,
+        fontSize=8.2,
+        leading=10.6,
         textColor=colors.HexColor(INK),
     ),
     "skill_value": ParagraphStyle(
         "skill_value",
         fontName=REGULAR,
-        fontSize=8.5,
-        leading=11.2,
+        fontSize=8.2,
+        leading=10.6,
         textColor=colors.HexColor(INK),
     ),
     "cert_name": ParagraphStyle(
@@ -200,7 +200,7 @@ def bullets(items: list[str]) -> ListFlowable:
 
 def section(title: str) -> list:
     return [
-        Spacer(1, 5),
+        Spacer(1, 4),
         Paragraph(escape(title).upper(), styles["section"]),
         HRFlowable(
             width="100%",
@@ -212,14 +212,20 @@ def section(title: str) -> list:
     ]
 
 
-def entry(title: str, meta: str, subtitle: str) -> Table:
+def entry(title: str, meta: str, subtitle: str, rich_subtitle: bool = False) -> Table:
     table = Table(
         [
             [
                 Paragraph(f"<b>{escape(title)}</b>", styles["entry_title"]),
                 Paragraph(escape(meta), styles["entry_meta"]),
             ],
-            [Paragraph(escape(subtitle), styles["entry_sub"]), ""],
+            [
+                Paragraph(
+                    subtitle if rich_subtitle else escape(subtitle),
+                    styles["entry_sub"],
+                ),
+                "",
+            ],
         ],
         colWidths=[135 * mm, 43 * mm],
     )
@@ -315,8 +321,8 @@ def build() -> None:
         pagesize=A4,
         leftMargin=19 * mm,
         rightMargin=19 * mm,
-        topMargin=15 * mm,
-        bottomMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
         title="Houssem Eddin Jlassi — CV",
         author="Houssem Eddin Jlassi",
         subject="Software Engineering Student and Full-Stack Developer",
@@ -351,14 +357,13 @@ def build() -> None:
     story += section("Profile Summary")
     story.append(
         Paragraph(
-            "Third-year <b>Software Engineering</b> student specializing in Software "
-            "Engineering and Information Systems at ISLAIb Béja. Hands-on full-stack "
-            "experience from a <b>PFA internship at Vermeg</b>, where I built an email "
-            "template management platform with <b>Angular, Spring Boot, PostgreSQL, and "
-            "JWT authentication</b>. Strong interest in backend and full-stack "
-            "development, with additional exposure to blockchain through three Hedera "
-            "certifications. Seeking a <b>PFE internship</b> starting February 2027 in "
-            "Tunis or remote.",
+            "Third-year <b>Software Engineering</b> student at ISLAIb Béja, "
+            "specializing in Software Engineering and Information Systems. Built an "
+            "email template management platform during a <b>PFA internship at Vermeg</b> "
+            "with <b>Angular, Spring Boot, PostgreSQL, and JWT authentication</b>, and "
+            "designed a <b>Next.js portfolio</b> to present that work. Strong interest "
+            "in backend and full-stack development, with three Hedera certifications. "
+            "Seeking a <b>PFE internship</b> starting February 2027 in Tunis or remote.",
             styles["body"],
         )
     )
@@ -377,8 +382,7 @@ def build() -> None:
                 "<b>Built end to end</b> an email template management platform during a PFA internship at <b>Vermeg</b>, an international banking and insurance software company.",
                 "Developed the <b>Angular</b> interface for template CRUD, categorization, search, live preview, SMTP sending, and send-history tracking.",
                 "Implemented the <b>Spring Boot</b> API with <b>JWT authentication</b>, REST endpoints, and <b>PostgreSQL</b> persistence using JPA.",
-                "Integrated <b>Spring Mail</b> with <b>MailHog</b> to test SMTP delivery locally, and debugged a race condition in the sending workflow.",
-                "Identified and remediated a cross-site scripting (XSS) risk in the template rendering flow.",
+                "Integrated <b>Spring Mail</b> with <b>MailHog</b> for local SMTP testing, debugged a race condition, and remediated an XSS risk in the template rendering flow.",
             ]
         )
     )
@@ -389,13 +393,6 @@ def build() -> None:
             "Institut Supérieur des Langues Appliquées et d'Informatique de Béja (ISLAIb)",
             "Béja, Tunisia",
             "Bachelor's Degree in Computer Science — Software Engineering (Génie Logiciel et Systèmes d'Information)                         2024–2027 (Expected)",
-        )
-    )
-    story.append(
-        bullets(
-            [
-                "Third-year student with coursework in software engineering, information systems, databases, and web/mobile development."
-            ]
         )
     )
 
@@ -414,7 +411,28 @@ def build() -> None:
         )
     )
 
-    story += section("Academic Projects")
+    story += section("Selected Projects")
+    story.append(
+        entry(
+            "Portfolio Website — Personal Full-Stack Project",
+            "2026",
+            "Next.js 16 | React 19 | TypeScript | Tailwind CSS 4 | Motion | Vercel | Live: "
+            + link(
+                "https://houssem-portfolio-gray.vercel.app",
+                "houssem-portfolio-gray.vercel.app",
+            ),
+            rich_subtitle=True,
+        )
+    )
+    story.append(
+        bullets(
+            [
+                "<b>Designed and built</b> a responsive English-language portfolio with Next.js, React, and TypeScript to present my Vermeg internship, academic projects, skills, and certifications.",
+                "Implemented dark/light themes, accessible navigation, reduced-motion support, SEO metadata, sitemap, robots, and structured data; deployed on Vercel with a screenshot lightbox case study.",
+            ]
+        )
+    )
+    story.append(Spacer(1, 4))
     story.append(
         entry(
             "Restaurant Management System — CRUD Web Application",
@@ -425,8 +443,7 @@ def build() -> None:
     story.append(
         bullets(
             [
-                "<b>Designed and built</b> a restaurant management web application using an <b>MVC architecture</b> in PHP.",
-                "Implemented <b>CRUD</b> operations for menus, orders, customers, and tables, backed by a relational <b>MySQL</b> schema.",
+                "<b>Designed and built</b> a restaurant management web application using an <b>MVC architecture</b> in PHP, with <b>CRUD</b> operations for menus, orders, customers, and tables backed by a relational <b>MySQL</b> schema.",
                 "Secured SQL queries and session handling; built a responsive HTML5/CSS3 interface with JavaScript interactions.",
             ]
         )
@@ -442,8 +459,7 @@ def build() -> None:
     story.append(
         bullets(
             [
-                "<b>Analyzed</b> a real-world banking transactions dataset (Kaggle) to explore and identify fraud patterns.",
-                "Cleaned and preprocessed data with <b>Pandas</b> (missing values, normalization, encoding) and computed statistical indicators with <b>NumPy</b>.",
+                "<b>Analyzed</b> a Kaggle banking transactions dataset to explore fraud patterns, cleaning and preprocessing data with <b>Pandas</b> (missing values, normalization, encoding) and computing statistical indicators with <b>NumPy</b>.",
                 "Visualized fraud patterns with <b>Matplotlib</b> and <b>Seaborn</b>, and identified discriminative features for anomaly detection.",
             ]
         )
